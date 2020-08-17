@@ -96,6 +96,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 // this is enabled in rules.mk
 #ifdef OLED_DRIVER_ENABLE
 
+oled_rotation_t oled_init_user(oled_rotation_t rotation) {
+    return OLED_ROTATION_180;  // flips the display 180 degrees
+}
+
 // Helper Function to render the QMK Logo to an OLED screen
 static void render_logo(void) {
     static const char PROGMEM qmk_logo[] = {
